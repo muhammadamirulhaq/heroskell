@@ -103,7 +103,7 @@ install_ghc() {
 # install_cabal_install "1.24.0.2" "$CACHE_DIR/bin"
 install_cabal_install() {
   CI_FNAME="cabal-install-$CABAL_INSTALL_VERSION-x86_64-unknown-linux.tar.gz"
-  CI_URL="https://www.haskell.org/cabal/release/cabal-install-$CABAL_INSTALL_VERSION/$CI_FNAME"
+  CI_URL="https://downloads.haskell.org/cabal/cabal-install-$CABAL_INSTALL_VERSION/$CI_FNAME"
 
   silently pushd "$CACHE_DIR/tmp/"
 
