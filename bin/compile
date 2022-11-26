@@ -219,10 +219,11 @@ silently rm -rf "$CACHE_DIR/tmp/"
 cd "$BUILD_DIR"
 
 bp_log "Installing app dependencies"
-cabal install --dependencies-only --enable-executable-stripping --disable-documentation --prefix="$ROOT_PACKAGE_DIR" --package-db="$PACKAGE_DB" | indent
+# cabal install --dependencies-only --enable-executable-stripping --disable-documentation --prefix="$ROOT_PACKAGE_DIR" --package-db="$PACKAGE_DB" | indent
+cabal build
 
-bp_log "Installing app"
-cabal install --enable-executable-stripping --disable-documentation --prefix="$BUILD_DIR/product" --package-db="$PACKAGE_DB" | indent
+# bp_log "Installing app"
+# cabal install --enable-executable-stripping --disable-documentation --prefix="$BUILD_DIR/product" --package-db="$PACKAGE_DB" | indent
 rm -rf dist/ # remove symlink that will be broken.
 rm *.cabal   # remove .cabal file from the slug
 find . -name '*.hs' -type f -delete # remove all compiled source code from the slug
